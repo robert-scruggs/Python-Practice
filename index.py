@@ -1,36 +1,32 @@
-
 from tkinter import *
-from turtle import bgcolor
-
-def submit():
-    username = entry.get()
-    print("Hello " + username)
-
-def delete():
-    entry.delete(0,END)
-
-def backspace():
-    entry.delete(len(entry.get()) - 1, END)
 
 window = Tk()
-window.geometry("300x250")
+window.geometry("750x750")
 window.title("Python Type Beat")
 window.config(bg="black")
 
-entry = Entry(window,
-            font=("Arial", 50),
-            fg="orange",
-            bg="black")
-entry.insert(0, "SpongeBob")
-entry.pack(side=LEFT)
 
-submit_Button = Button(window, text="submit", command=submit)
-submit_Button.pack(side=RIGHT)
+screen_width = window.winfo_width() / 2
+screen_height = window.winfo_height() / 2
 
-delete_Button = Button(window, text="Delete", command=delete)
-delete_Button.pack(side=RIGHT)
+def sayHello():
+    print("say hello")
 
-backspace_Button = Button(window, text="Backspace", command=backspace)
-backspace_Button.pack(side=RIGHT)
+def sayBye():
+    print("say bye")    
+
+
+frame = Frame(window, bg="skyblue3", width=500, height=250)
+frame.place(relx=0.5,rely=0.5, anchor=CENTER)
+
+button1 = Button(frame, width=25, height=25, text="Button 1", command=sayBye)
+button1.grid(row=0, column=0, padx=10, pady=10)
+
+button2 = Button(frame, width=25, height=25, text="Button 2", command=sayHello)
+button2.grid(row=0, column=1, padx=10, pady=10)
+
+
+
+
 
 window.mainloop()
