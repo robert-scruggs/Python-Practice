@@ -9,17 +9,6 @@ def main():
 
 
 
-    layout = QVBoxLayout()
-
-    label = QLabel("Press the Button Below")
-    button = QPushButton("Press me!")
-    button.clicked.connect(on_clicked)
-
-    layout.addWidget(label)
-    layout.addWidget(button)
-
-    window.setLayout(layout)
-
 
 
     window.show()
